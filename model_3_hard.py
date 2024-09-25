@@ -10,9 +10,8 @@ def calculate_structure_sum(data_structure):
     elif isinstance(data_structure[0],set):
         return calculate_structure_sum(list(data_structure[0]))+calculate_structure_sum(data_structure[1:])
     elif isinstance(data_structure[0],dict):
-        x = list(data_structure[0].keys())
-        y = list(data_structure[0].values())
-        return (calculate_structure_sum(x) + calculate_structure_sum(y) + calculate_structure_sum(data_structure[1:]))
+        x = list(data_structure[0].items())
+        return (calculate_structure_sum(x) + calculate_structure_sum(data_structure[1:]))
     elif isinstance(data_structure[0], tuple):
         return calculate_structure_sum(data_structure[0]) + calculate_structure_sum(data_structure[1:])
 
